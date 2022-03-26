@@ -1,4 +1,6 @@
 const idPost= document.getElementById('idPost')
+const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
+
 
 function plantillaPost(post) {
     
@@ -54,50 +56,25 @@ function plantillaPost(post) {
       </article>`
     )
   }
-
-  //https://res.cloudinary.com/practicaldev/image/fetch/s--gkqqTuyb--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/159737/9f8f2a93-d0a1-4d77-a1f6-c3fc67ebde90.jpg
-  //const objPost = new postInfo()
-
- // objPost.imgLink = 'https://res.cloudinary.com/practicaldev/image/fetch/s--gkqqTuyb--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/159737/9f8f2a93-d0a1-4d77-a1f6-c3fc67ebde90.jpg'
- // console.log(objPost.imgLink)
-
-function Post(
-    namePost,
-    datePost,
-    imgLink,
-    titlePost,
-    tagsPost,
-    reactionsPost,
-    commentsPost,
-    timeReadP) {
-        
-        this.namePost= namePost;
-        this.datePost =datePost;
-        this.imgLink = imgLink;
-        this.titlePost = titlePost;
-        this.tagsPost= tagsPost;
-        this.reactionsPost=reactionsPost;
-        this.commentsPost=commentsPost;
-        this.timeReadP =timeReadP
+ 
+  const apiDevto=()=>{
     
   }
-  
-  let postDat = [ 
-      ['Madza','Jun 25', 'https://res.cloudinary.com/practicaldev/image/fetch/s--gkqqTuyb--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/159737/9f8f2a93-d0a1-4d77-a1f6-c3fc67ebde90.jpg','17 Killer Web Apps You Should Use to Increase Productivity 🚀','#webdev','1177 reactions','67 comments','4 min read'],
-      ['Ben Halperm','Jun 27','https://res.cloudinary.com/practicaldev/image/fetch/s--Ea1OGrCb--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1/f451a206-11c8-4e3d-8936-143d0a7e65bb.png',`What's the most fun you've ever had coding?`,'#discuss','17 reactions','18 comments','4 min read']
- ]
 
  const createPost = ()=>{
-  let post= []
-
-  for(let i=0;i<postDat.length;i++){
-    //for(let j=0;j<postDat[i].length;j++) 
-    post[i] = new Post(postDat[i][0],postDat[i][1],postDat[i][2],postDat[i][3],postDat[i][4],postDat[i][5],postDat[i][6],postDat[i][7])
-    console.log(post[i])
-    idPost.innerHTML=plantillaPost(post[i])
-    //post[i] = new Post(postDat[i][0],postDat[i][1],postDat[i][2],postDat[i][3],postDat[i][4],postDat[i][5],postDat[i][6],postDat[i][7])
-  }
-
+  const url=`${urlApi}/devto.json`
+    fetch(url).then((respuesta)=>respuesta.json())
+    .then((body)=>{
+      console.log(body)
+      
+      const apiJson=Object.keys(body).map(id=>{
+       // console.log(body[id])
+        const card=plantillaPost(body[id])
+        idPost.insertAdjacentHTML('afterbegin',card)
+      })
+    //  console.log(apiJson)
+      
+    })
   
  }
 
