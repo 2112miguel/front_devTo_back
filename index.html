@@ -12,24 +12,29 @@
     <link rel="icon" href="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png">
 </head>
 <body class="bg-light ">
-  <!--Nav bar principal-->
-  <nav class="navbar navbar-light bg-white fixed-top d-flex flex-row d-flex justify-content-xl-around justify-content-md-around justify-content-sm-start justify-content-start">
-    <form class="form-inline d-flex">
+  <!--Navbar-->
+  <nav class="navbar navbar-light bg-white fixed-top flex-row d-flex justify-content-evenly d-flex justify-content-around">
+    <form class="form-inline d-flex w-auto">
       <a class="navbar-brand" href="./index.html">
         <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" width="50" height="40" alt="">
       </a>
       <input class="form-control" style="width: 402px;" type="search" placeholder="Search" aria-label="Search">
       <a href="" class="ms-1"><i class="bi bi-search"></i></a>       
     </form>
-      <form class="form-inline" >
-        <button type="button" class="btn">Log in</button>
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>           
-      </form>      
+    <div class="d-inline-flex justify-content-evenly">
+      <button type="button" class="btn btn-outline-primary ms-3">Create Post</button>
+      <button type="button" class="btn btn-outline-primary ms-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+      </svg>
+    </button>
+    <div class="rounded-circle w-auto ms-3"><img class="rounded-circle h-100" src="img/pp.jpeg"></div>
+    </div>     
   </nav>  
   <main class="py-5 text-center container">
-          <!--Flex principal-->
-          <div class=" d-flex bd-highlight" >
-            <!--Primer celda-->
+          <!--Master Div/Flex-->
+          <div class=" d-flex bd-highlight">
+            <!--Firsth column-->
             <div id="navL" class="p-2 bd-highlight my-5">
                   <div class="card" style="width: 18rem;">
                     <div class="card-body">
@@ -151,8 +156,8 @@
                     </div>
                   </div>
             </div>
-            <!--Segunda celda Main-->
-            <div class="bd-highlight my-5">
+            <!--Second column-->
+            <div class="bd-highlight my-5 col-xl-6">
                 <!--Barra Nav-->
                 <ul class="nav ">
                     <li class="nav-item">
