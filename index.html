@@ -18,100 +18,118 @@
       <a class="navbar-brand" href="./index.html">
         <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" width="50" height="40" alt="">
       </a>
-      <input type="searchBox" placeholder="Search" class="inputSearch rounded-pill mb-4">
+      <input class="form-control" style="width: 402px;" type="search" placeholder="Search" aria-label="Search">
+      <a href="" class="ms-1"><i class="bi bi-search"></i></a>       
     </form>
-      <form class="form-inline" >
-        <a class="btn btn-light" href="./new.html">Create Post</a>
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>           
-      </form>      
+    <div class="d-inline-flex justify-content-evenly">
+      <button type="button" class="btn btn-outline-primary ms-3">Create Post</button>
+      <button type="button" class="btn btn-outline-primary ms-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+      </svg>
+    </button>
+    <div class="rounded-circle w-auto ms-3"><img class="rounded-circle h-100" src="img/pp.jpeg"></div>
+    </div>     
   </nav>  
-  <main class="py-5 container">
-          <!--Flex principal-->
-          <div class="d-flex row">
-            <!--Primer celda-->
-            <div id="navLeftBar" class="p-2 mt-5 col-2">
-              <div id="linksLeftBar" class="d-flex flex-column text-dark">
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-house-door-fill ms-3 textHover"></i>
-                  <span class="ms-1 textHover">Home</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-card-list ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Listings</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-mic-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Podcasts</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-camera-video-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Videos</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-tags-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Tags</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-lightbulb-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">FAQ</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-bag-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">DEV Shop</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-heart-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Sponsors</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-card-list ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">About</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-telephone-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">About</span>
-                </a>
-              </div>
-              <!--LISTA OTHER-->
-              <div id="otherLeftBar" class="d-flex flex-column text-dark mt-3 mb-3">
-                <h6 class="fw-bold">Other</h6>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-hand-thumbs-up-fill ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Code of Conduct</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-emoji-sunglasses ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Privacy Policy</span>
-                </a>
-                <a href="#" class="text-decoration-none rounded py-2 buttonHover text-secondary">
-                  <i class="bi bi-eyeglasses ms-3 textHover"></i>
-                  <span class="text-secondary ms-1">Terms of use</span>
-                </a>
-              </div>
-              <!--Barra redes-->
-              <div id="socialNetworkIcons" class="mt-2 mb-2 d-flex justify-content-between">
-                <a href="#" class="buttonHover rounded p-2 text-dark">
-                  <i class="bi bi-twitter h4 textHover"></i>
-                </a>
-                <a href="#" class="buttonHover rounded p-2 text-dark">
-                  <i class="bi bi-facebook h4 textHover"></i>
-                </a>
-                <a href="#" class="buttonHover rounded p-2 text-dark">
-                  <i class="bi bi-github h4 textHover"></i>
-                </a>
-                <a href="#" class="buttonHover rounded p-2 text-dark">
-                  <i class="bi bi-instagram h4 textHover"></i>
-                </a>
-                <a href="#" class="buttonHover rounded p-2 text-dark">
-                  <i class="bi bi-twitch h4 textHover"></i>
-                </a>
-
-              </div>
+  <main class="py-5 text-center container">
+          <!--Master Div/Flex-->
+          <div class=" d-flex bd-highlight">
+            <!--Firsth column-->
+            <div id="navL" class="p-2 bd-highlight my-5">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                          <a href="">Dev Community</a> is a community of 788,722 amazing developers
+                      </h5>               
+                      <p class="card-text text-muted">We're a place where coders share, stay up-to-date and grow their careers.</p>
+                      <button type="button" class="btn btn-outline-primary ml-4" onclick="location.href='./createAcount.html'">Create account</button><br/>
+                      <button type="button" class="btn btn-outline-light text-dark ml-5">Log in</button>
+                    </div>
+                  </div>
+                  <br/>
+                  <!--LISTA-->
+                  <article class="list-group ">  
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-house-door-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">Home</button>
+                        </a>                    
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-card-list"></i>
+                          <button type="button" class="btn btn-link text-dark">Listings</button>
+                        </a> 
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-mic-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">Podcasts</button>
+                        </a> 
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-camera-video-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">Videos</button>
+                        </a>           
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-tags-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">Tags</button>
+                        </a> 
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-lightbulb-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">FAQ</button>
+                        </a>                                       
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-bag-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">DEV Shop</button>
+                        </a>   
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-heart-fill"></i>
+                          <button type="button" class="btn btn-link text-dark">Sponsors</button>
+                        </a>          
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-card-list"></i>
+                          <button type="button" class="btn btn-link text-dark">About</button>
+                        </a>     
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                          <i class="bi bi-telephone"></i>
+                          <button type="button" class="btn btn-link text-dark">Contact</button>
+                        </a>      
+                  </article>
+                  <br/>
+                  <!--LISTA OTHER-->
+                  <article class="list-group">
+                    Other
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                            <i class="bi bi-hand-thumbs-up-fill"></i>
+                            <button type="button" class="btn btn-link text-dark">Code of Conduct</button>
+                        </a>              
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">
+                            <i class="bi bi-emoji-sunglasses"></i>
+                            <button type="button" class="btn btn-link text-dark">Privacy Policy</button>
+                        </a>  
+                        <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">          
+                            <i class="bi bi-eyeglasses"></i>
+                            <button type="button" class="btn btn-link text-dark">Terms of use</button>
+                        </a>      
+                  </article>
+                  <!--Barra redes-->
+                  <div class="d-flex flex-row bd-highlight mb-3">
+                    <article class="p-2 bd-highlight">
+                        <a href=""><i class="bi bi-twitter h4 text-dark"></i></a> 
+                    </article>
+                    <article class="p-2 bd-highlight">
+                        <a href=""><i class="bi bi-facebook h4 text-dark"></i></a>    
+                    </article>
+                    <article class="p-2 bd-highlight">
+                        <a href=""><i class="bi bi-github h4 text-dark"></i> </a>
+                    </article>
+                    <article class="p-2 bd-highlight">
+                        <a href=""><i class="bi bi-instagram h4 text-dark"></i></a>
+                    </article>
+                    <article class="p-2 bd-highlight">
+                        <a href=""><i class="bi bi-twitch h4 text-dark"></i></a>
+                    </article>
+                  </div>
                   <!--Barra Tags-->
                   
                   <!--Publicidad-->
                   <br />
-                  <div class="card">
+                  <div class="card" style="width: 18rem;">
                     <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v7KOxCyh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://cdn.shopify.com/s/files/1/1626/8507/products/mockup-5a41f96d_1024x1024.jpg%3Fv%3D1550790358" class="card-img-top">
                     <div class="card-body">
                       <a href="">Get Your Stickers!</a>
@@ -119,14 +137,16 @@
                   </div>
                   <!--Ultima Card-->
                   <br />
-                  <div class="card">                    
+                  <div class="card" style="width: 18rem;">                    
                     <div class="card-body">
                       <p>
-                        DEV runs on 100% open source code known as <a href="">Forem</a>. Contribute to the codebase or host your own!
+                        DEV runs on 100% open source code known as<a href="">Forem.</a> 
+
+                        Contribute to the codebase or host your own!
                       </p>
                       <p>
                         <strong>
-                           Check these out!
+                            these out!
                         </strong> 
                       </p>
                       <ul>
@@ -136,8 +156,8 @@
                     </div>
                   </div>
             </div>
-            <!--Segunda celda Main-->
-            <div class="bd-highlight my-5 col-xl-7">
+            <!--Second column-->
+            <div class="bd-highlight my-5 col-xl-6">
                 <!--Barra Nav-->
                 <ul class="nav ">
                     <li class="nav-item">
@@ -155,12 +175,27 @@
               <section id="idPost">
 
               </section>    
+              <section class="d-flex flex-column mt-5" style="width: 676.266px">
+                <div class="d-flex flex-row bd-highlight mb-2">
+                  <article class="imgDev mr-4"></article>
+                  <article class="">
+                    <div class=""><p class="font-weight-bold mb-0 h3"><a href="" >DEV Community</a>  is a community of 801,259 amazing developers</p></div>
+                    <div><small>We're a place where coders share, stay up-to-date and grow their careers.</small> </div>
+                  </article>
+                </div>
+                <div class="d-flex flex-column mt-2">
+                  <div class="align-self-center"><button type="button" class="btn btn-primary btn-sm">Create account</button></div>
+                  <div class="align-self-center"><button type="button" class="btn btn-link">Log in</button></div>
+                </div>
+
+              </section>    
+                  
             </div>
             <!--Ultima celda de la lista-->
-            <div id="aside" class="mt-5 bd-highlight ms-5 col-2">
+            <div id="aside" class="m-2 p-3 bd-highlight">
               <!--Lista de links-->
               <article class="list-group w-auto">
-                <section class="d-flex flex-row">
+                <section class="d-flex flex-row justify-content-between">
                   <p>Listings</p>
                   <a href="">See all</a>
                 </section>      
