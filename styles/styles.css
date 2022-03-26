@@ -76,6 +76,16 @@
     
 }
 
+.buttonHover:hover {
+    background-color: rgb(224, 225, 241);
+}
+
+.buttonHover:hover > .textHover {
+    color: rgb(42, 48, 165);
+    text-decoration: underline;
+
+}
+
 @media (max-width: 1025px ){
     #aside{
         display: none;
