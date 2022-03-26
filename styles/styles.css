@@ -76,6 +76,31 @@
     
 }
 
+.buttonHover:hover {
+    background-color: rgb(224, 225, 241);
+}
+
+.buttonHover:hover > .textHover {
+    color: rgb(42, 48, 165);
+    text-decoration: underline;
+
+}
+
+.inputSearch {
+    margin-right: 1px;
+    font-size: 18px;
+    font-weight: 300;
+    border: 1px solid grey;
+    width: 402px;
+    color: black;
+    padding: 4px 4px 4px 29px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 3px;
+  }
+
 @media (max-width: 1025px ){
     #aside{
         display: none;
