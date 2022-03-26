@@ -1,0 +1,89 @@
+.cardPost{
+    height: 186px;
+    width: 676.266px;
+    padding: 20px;
+    background-color: white;
+}
+
+.imgPost{
+    background-image: url("https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xsfedpmjdloalsc1hqsc.png");
+    background-repeat: no-repeat;
+    background-size: 676.266px 283.266px;
+    display: block;
+    width: 676.266px;
+    height: 273.286px;
+    margin: 0px;  
+}
+
+.profileImg{
+    
+        background-size: 35px 35px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin: 0px;   
+        border-radius: 50%;
+}
+
+.imgDev{
+    background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--pcSkTMZL--/c_limit,f_auto,fl_progressive,q_80,w_190/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png");
+    background-repeat: no-repeat;
+    background-size: 44.8125px 44.8125px;
+    display: block;
+    width: 60.8125px;
+    height: 44.8125px;
+    margin: 0px;  
+    -webkit-transform:rotate(355deg);
+    -moz-transform: rotate(355deg);
+    -ms-transform: rotate(355deg);
+    -o-transform: rotate(355deg);
+    transform: rotate(355deg);
+    border-radius: 5px;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.barSear{
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #dfe1e5;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.iconSear{
+    background-image: url("https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-search-ui-dreamstale-lineal-dreamstale.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+
+.main{
+    margin-top: 80px; 
+    margin-left: 312.5px; 
+    
+}
+
+@media (max-width: 1025px ){
+    #aside{
+        display: none;
+    }
+}
+
+@media (max-width: 767px ){
+    #navL{
+        display: none;
+    }
+}
