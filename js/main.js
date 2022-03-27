@@ -67,14 +67,12 @@ function plantillaPost(post,key) {
     .then((body)=>{
       //let key=Object.keys(body)
       const keys= Object.keys(body)
-      keys.forEach((key)=>{
-      //  console.log(key)
-        const apiJson=Object.keys(body).map(id=>{
-          const card=plantillaPost(body[id],key)
-          idPost.insertAdjacentHTML('afterbegin',card)
-        })
+      let i=0
+      const apiJson=Object.keys(body).map(id=>{
+        const card=plantillaPost(body[id],keys[i])
+        idPost.insertAdjacentHTML('afterbegin',card)
+        i++
       })
-      
       
     })
  }
