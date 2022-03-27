@@ -5,7 +5,7 @@ const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
 function plantillaPost(post) {
     
     return (
-        `<article class="d-flex flex-column  bd-highlight">
+        `<article class="d-flex flex-column bd-highlight">
         <a href="" class="imgPost"></a>
         <div class="cardPost mb-3 mt-0 pt-0" style="height: 231px;">
           <article class="card-body pt-0 mt-0 d-flex flex-column">
