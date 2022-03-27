@@ -6,7 +6,7 @@ function plantillaPost(post,key) {
    // console.log(key)
     return (
         `<article class="d-flex flex-column  bd-highlight">
-        <a href="./post.html?id=${key}" class="imgPost"></a>
+        <a href="./post.html?id=${key}" ><img class="w-75" src="${post.imgPost}"></a>
         <div class="cardPost mb-3 mt-0 pt-0" style="height: 231px;">
           <article class="card-body pt-0 mt-0 d-flex flex-column">
             <!--img perfil y botones-->
@@ -21,7 +21,7 @@ function plantillaPost(post,key) {
                 </div>
               </article>
             </section>                        
-            <a href="" class="text-dark text-decoration-none mb-0">
+            <a href="./post.html?id=${key}" class="text-dark text-decoration-none mb-0">
                 <h4 class="font-weight-bold">
                   ${post.titlePost}
                 </h4>
