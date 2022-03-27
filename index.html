@@ -14,14 +14,150 @@
 <body class="bg-light ">
   <!--Navbar-->
   <nav class="navbar navbar-light bg-white fixed-top flex-row d-flex justify-content-evenly d-flex justify-content-around">
-    <form class="form-inline d-flex w-auto">
-      <a class="navbar-brand" href="./index.html">
-        <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" width="50" height="40" alt="">
-      </a>
-      <input type="searchBox" placeholder="Search" class="inputSearch rounded-pill mb-4">    
-    </form>
+    <div class="d-flex justify-content-center">
+      <div id="burgerMenu" class="d-block d-sm-block d-md-none d-lg-none">
+        <a class="btn btn-white" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          <i class="bi bi-list h4"></i>
+        </a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">DEV Community</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+  
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">
+                    <a href="">Dev Community</a> is a community of 788,722 amazing developers
+                </h5>               
+                <p class="card-text text-muted">We're a place where coders share, stay up-to-date and grow their careers.</p>
+                <button type="button" class="btn btn-outline-primary ml-4" onclick="location.href='./createAcount.html'">Create account</button><br/>
+                <button type="button" class="btn btn-outline-light text-dark ml-5">Log in</button>
+              </div>
+            </div>
+            <br/>
+            <!--LISTA-->
+            <article class="list-group ">  
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-house-door-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">Home</button>
+                  </a>                    
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-card-list"></i>
+                    <button type="button" class="btn btn-link text-dark">Listings</button>
+                  </a> 
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-mic-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">Podcasts</button>
+                  </a> 
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-camera-video-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">Videos</button>
+                  </a>           
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-tags-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">Tags</button>
+                  </a> 
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-lightbulb-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">FAQ</button>
+                  </a>                                       
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-bag-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">DEV Shop</button>
+                  </a>   
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-heart-fill"></i>
+                    <button type="button" class="btn btn-link text-dark">Sponsors</button>
+                  </a>          
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-card-list"></i>
+                    <button type="button" class="btn btn-link text-dark">About</button>
+                  </a>     
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                    <i class="bi bi-telephone"></i>
+                    <button type="button" class="btn btn-link text-dark">Contact</button>
+                  </a>      
+            </article>
+            <br/>
+            <!--LISTA OTHER-->
+            <article class="list-group">
+              Other
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">                            
+                      <i class="bi bi-hand-thumbs-up-fill"></i>
+                      <button type="button" class="btn btn-link text-dark">Code of Conduct</button>
+                  </a>              
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">
+                      <i class="bi bi-emoji-sunglasses"></i>
+                      <button type="button" class="btn btn-link text-dark">Privacy Policy</button>
+                  </a>  
+                  <a href="#" class="text-dark list-group-item list-group-item-action border-white bg-light">          
+                      <i class="bi bi-eyeglasses"></i>
+                      <button type="button" class="btn btn-link text-dark">Terms of use</button>
+                  </a>      
+            </article>
+            <!--Barra redes-->
+            <div class="d-flex flex-row bd-highlight mb-3">
+              <article class="p-2 bd-highlight">
+                  <a href=""><i class="bi bi-twitter h4 text-dark"></i></a> 
+              </article>
+              <article class="p-2 bd-highlight">
+                  <a href=""><i class="bi bi-facebook h4 text-dark"></i></a>    
+              </article>
+              <article class="p-2 bd-highlight">
+                  <a href=""><i class="bi bi-github h4 text-dark"></i> </a>
+              </article>
+              <article class="p-2 bd-highlight">
+                  <a href=""><i class="bi bi-instagram h4 text-dark"></i></a>
+              </article>
+              <article class="p-2 bd-highlight">
+                  <a href=""><i class="bi bi-twitch h4 text-dark"></i></a>
+              </article>
+            </div>
+            <!--Barra Tags-->
+            
+            <!--Publicidad-->
+            <br />
+            <div class="card" style="width: 18rem;">
+              <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v7KOxCyh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://cdn.shopify.com/s/files/1/1626/8507/products/mockup-5a41f96d_1024x1024.jpg%3Fv%3D1550790358" class="card-img-top">
+              <div class="card-body">
+                <a href="">Get Your Stickers!</a>
+              </div>
+            </div>
+            <!--Ultima Card-->
+            <br />
+            <div class="card" style="width: 18rem;">                    
+              <div class="card-body">
+                <p>
+                  DEV runs on 100% open source code known as<a href="">Forem.</a> 
+  
+                  Contribute to the codebase or host your own!
+                </p>
+                <p>
+                  <strong>
+                      these out!
+                  </strong> 
+                </p>
+                <ul>
+                    <li><a href="">Main Forem Repo</a></li>
+                    <li><a href="">Self-Host Instructions</a></li>
+                </ul>
+              </div>
+            </div>
+      </div>
+          </div>
+      </div>
+      <form class="form-inline d-flex w-auto">
+        <a class="navbar-brand" href="./index.html">
+          <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" width="50" height="40" alt="">
+        </a>
+        <input type="searchBox" placeholder="Search" class="inputSearch rounded-pill mb-4">    
+      </form>
+    </div>
+    </div>
     <div class="d-inline-flex justify-content-evenly">
-      <button type="button" class="btn btn-outline-primary ms-3">Create Post</button>
+      <button type="button" class="btn btn-outline-primary ms-3 d-sm-none d-md-block">Create Post</button>
       <button type="button" class="btn btn-outline-primary ms-3">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
