@@ -99,7 +99,15 @@
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: 3px;
-  }
+}
+
+.grayTextColor {
+    color: #404040;
+}
+a {
+    color: rgb(62, 73, 215);
+    text-decoration: none;
+}
 
 @media (max-width: 1025px ){
     #aside{
