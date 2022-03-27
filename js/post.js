@@ -10,8 +10,8 @@ const postMain=()=>{
     fetch(url).then((answ)=>answ.json())
     .then((body)=>{
         console.log(body)
-        const post=`<div class="card" style="width: 18rem;">
-                        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ZB74tbLi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/inayndnqqdvee33qaaqe.jpeg" class="card-img-top" alt="...">
+        const post=`<div class="card p-3 m-4" >
+                        <img src="${body.imgPost}" alt="...">
                         <article class="d-flex">
                             <div class""><img class="w-50 h-50 rounded-circle" src="https://res.cloudinary.com/practicaldev/image/fetch/s--pcSkTMZL--/c_limit,f_auto,fl_progressive,q_80,w_190/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png" alt=""></div>
                             <div class="d-flex flex-column">
