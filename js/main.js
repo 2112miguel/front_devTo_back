@@ -2,11 +2,11 @@ const idPost= document.getElementById('idPost')
 const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
 
 
-function plantillaPost(post) {
-    
+function plantillaPost(post,key) {
+   // console.log(key)
     return (
-        `<article class="d-flex flex-column bd-highlight">
-        <a href="" class="imgPost"></a>
+        `<article class="d-flex flex-column  bd-highlight">
+        <a href="./post.html?id=${key}" class="imgPost"></a>
         <div class="cardPost mb-3 mt-0 pt-0" style="height: 231px;">
           <article class="card-body pt-0 mt-0 d-flex flex-column">
             <!--img perfil y botones-->
@@ -65,17 +65,21 @@ function plantillaPost(post) {
   const url=`${urlApi}/devto.json`
     fetch(url).then((respuesta)=>respuesta.json())
     .then((body)=>{
-      console.log(body)
-      
+      //let key=Object.keys(body)
+      const keys= Object.keys(body)
+      let i=0
       const apiJson=Object.keys(body).map(id=>{
-       // console.log(body[id])
-        const card=plantillaPost(body[id])
+        const card=plantillaPost(body[id],keys[i])
         idPost.insertAdjacentHTML('afterbegin',card)
+        i++
       })
-    //  console.log(apiJson)
       
     })
-  
+ }
+
+ const goPost=(idPost)=>{
+   console.log('hace algo')
+  window.local.assing(``)
  }
 
  createPost()
