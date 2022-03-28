@@ -14,7 +14,7 @@ function plantillaPost(post,key) {
             <div class="card-body">
               <div class="d-flex">
                 <div class="d-flex profileImg me-1">
-                  <img src="${post.authorImage}" class="border border-1 rounded-circle">
+                  <img src="${post.authorImage}" class="border border-1 rounded-circle profileImg">
                 </div>
                 <div class="d-flex flex-column text-start w-100">
                   <div class="d-flex flex-column text-start">
