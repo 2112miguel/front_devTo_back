@@ -104,9 +104,55 @@
 .grayTextColor {
     color: #404040;
 }
-a {
+.linksColored {
     color: rgb(62, 73, 215);
     text-decoration: none;
+}
+.titleLink {
+    text-decoration: none;
+    color: #000000;
+}
+.titleLink:hover {
+    color: rgb(49, 58, 171)
+}
+
+.buttonAuthor {
+    color: rgb(61, 61, 61)
+}
+.buttonAuthor:hover {
+    color: #000000;
+    background-color: rgb(225, 225, 225);
+}
+
+.buttonTags {
+    color: rgb(61, 61, 61);
+    font-size: small;
+}
+.buttonTags:hover {
+    color: rgb(25, 25, 25);
+    background-color: rgb(243, 243, 243);
+    outline: solid 1px rgb(227, 227, 227);
+}
+.buttonSave {
+    background-color: rgb(214, 214, 215);
+    color: rgb(61, 61, 61);
+}
+.buttonSave:hover {
+    background-color: rgb(189, 189, 189);
+    color: #000000;
+}
+
+.cardSmallText {
+    font-size: small;
+}
+
+.listings {
+    background-color: rgb(250, 250, 250);
+    color: #404040;
+}
+.listings:hover {
+    background-color: #fff;
+    color: rgb(42, 48, 165);
 }
 
 @media (max-width: 1025px ){

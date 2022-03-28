@@ -13,7 +13,7 @@
 </head>
 <body class="bg-light ">
   <!--Navbar-->
-  <nav class="navbar navbar-light bg-white fixed-top flex-row d-flex justify-content-evenly d-flex justify-content-around">
+  <nav class="navbar navbar-light bg-white fixed-top flex-row d-flex justify-content-evenly d-flex justify-content-around border-bottom border-2">
     <div class="d-flex justify-content-center">
       <!-- Burger menu, hidden until the smallest breakpoint -->
       <div id="burgerMenu" class="d-block d-sm-block d-md-none d-lg-none">
@@ -129,7 +129,7 @@
   <main class="py-5 text-center container">
           <!--Master Div/Flex-->
           <div class=" d-flex bd-highlight justify-content-center row">
-            <div id="navLeftBar" class="p-2 mt-5 col col-sm-2 col-log-2 d-sm-none d-none d-md-block d-lg-block d-xl-block d-xxl-block">
+            <div id="navLeftBar" class="p-2 mt-5 col-2 col-sm-2 col-lg-2 col-xl-2 col-xxl-2 d-sm-none d-none d-md-block d-lg-block d-xl-block d-xxl-block">
               <div id="linksLeftBar" class="d-flex flex-column text-dark text-start">
                 <a href="#" class="text-decoration-none rounded py-2 buttonHover grayTextColor">
                   <i class="bi bi-house-door-fill ms-3 textHover"></i>
@@ -189,20 +189,20 @@
                 </a>
               </div>
               <!--Barra redes-->
-              <div id="socialNetworkIcons" class="mt-2 mb-2 d-flex justify-content-between">
-                <a href="#" class="buttonHover rounded p-2 grayTextColor">
+              <div id="socialNetworkIcons" class="mt-2 mb-2 d-flex">
+                <a href="#" class="buttonHover rounded p-2 grayTextColor flex-fill">
                   <i class="bi bi-twitter h4 textHover"></i>
                 </a>
-                <a href="#" class="buttonHover rounded p-2 grayTextColor">
+                <a href="#" class="buttonHover rounded p-2 grayTextColor flex-fill">
                   <i class="bi bi-facebook h4 textHover"></i>
                 </a>
-                <a href="#" class="buttonHover rounded p-2 grayTextColor">
+                <a href="#" class="buttonHover rounded p-2 grayTextColor flex-fill">
                   <i class="bi bi-github h4 textHover"></i>
                 </a>
-                <a href="#" class="buttonHover rounded p-2 grayTextColor">
+                <a href="#" class="buttonHover rounded p-2 grayTextColor flex-fill">
                   <i class="bi bi-instagram h4 textHover"></i>
                 </a>
-                <a href="#" class="buttonHover rounded p-2 grayTextColor">
+                <a href="#" class="buttonHover rounded p-2 grayTextColor flex-fill">
                   <i class="bi bi-twitch h4 textHover"></i>
                 </a>
 
@@ -213,14 +213,14 @@
                   <div class="card">
                     <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v7KOxCyh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://cdn.shopify.com/s/files/1/1626/8507/products/mockup-5a41f96d_1024x1024.jpg%3Fv%3D1550790358" class="card-img-top">
                     <div class="card-body">
-                      <a href="">Get Your Stickers!</a>
+                      <a href="" class="linksColored">Get Your Stickers!</a>
                     </div>
                   </div>
                   <!--Ultima Card-->
                   <div class="card">                    
                     <div class="card-body">
                       <p class="text-start">
-                        DEV runs on 100% open source code known as <a href="">Forem</a>. Contribute to the codebase or host your own!
+                        DEV runs on 100% open source code known as <a href="" class="linksColored">Forem</a>. Contribute to the codebase or host your own!
                       </p>
                       <p>
                         <strong class="text-start">
@@ -228,29 +228,31 @@
                         </strong> 
                       </p>
                       <ul class="text-start">
-                          <li><a href="">Main Forem Repo</a></li>
-                          <li><a href="">Self-Host Instructions</a></li>
+                          <li><a href="" class="linksColored">Main Forem Repo</a></li>
+                          <li><a href="" class="linksColored">Self-Host Instructions</a></li>
                       </ul>
                     </div>
                   </div>
             </div>            
             <!--Second column-->
-            <div class="bd-highlight my-5 col col-sm-10 col-lg-8 d-inline d-flex justify-content-center flex-column">
+            <div class="col-7 col-sm-10 col-lg-8 col-xl-7 col-xxl-7 d-inline d-flex justify-content-center flex-column mt-5">
                 <!--Barra Nav-->
-                <ul class="nav ">
-                    <li class="nav-item">
-                      <a class="nav-link active text-dark" href="#">Relevant</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-dark" href="#">Lastest</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-dark" href="#">Top</a>
-                    </li>    
-                  </ul>
+                <div>
+                  <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link active text-dark" href="#">Relevant</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Lastest</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Top</a>
+                      </li>    
+                    </ul>
+                </div>
                   <!--Cards Scroll infinito-->
                   <!--Primera card-->
-              <section id="idPost" class="d-flex flex-column justify-content-center">
+              <section id="idPost" class="d-flex flex-column justify-content-center gap-2">
 
               </section>    
               <section class="d-flex flex-column mt-5">
@@ -270,51 +272,33 @@
                   
             </div>
             <!--Ultima celda de la lista-->
-            <div id="aside" class="mt-5 pt-3 bd-highlight col col-lg-2 d-none d-lg-block d-xl-block d-xxl-block">
-              <!--Lista de links-->
-              <article class="list-group w-auto">
-                <section class="d-flex flex-row justify-content-between">
-                  <p>Listings</p>
-                  <a href="">See all</a>
-                </section>      
-                <a href="#" class="list-group-item list-group-item-action border-white">Speak at FutureStack 2022!<br/>cfp</a>
-                <a href="#" class="list-group-item list-group-item-action border-white">How to grow & promote organically yout NFT proyect 🚀 <br/>education</a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Free course: 6-figure Contractor Masterclass<br/></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Ebook: How to build a serverless app plataform on Kunbernetes 🔥 🚀 <br/>forsale</a>
-                <a href="#" class="list-group-item list-group-item-action border-white">🔥Nebula Graph Community Meeting 🔥 <br/>forsale</a>
-                <a href="#" class="list-group-item list-group-item-action border-white"><p class="text-center">Create a Listing</p></a>
-              </article>
-              <br/>
-              <section class="list-group w-auto">
-                <a href="#" class="text-dark"><strong>#news</strong></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Chatbots Could Help Mitigate Eating Disorders, Retro Slavic Adventure Games, & more on DevNews 🗞 <br/><mark>New</mark></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Whats new in Chrome 98 DevTools<br/><mark>New</mark></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Distributed Q&A for developers<br/><small>3 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">URLRealm - Link Shortner.<br/><small>3 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">  How to expose your open source project<br/><mark>New</mark></a>
-              </section>
-              <br/>
-              <section class="list-group w-auto">
-                <a href="#" class="text-dark"><strong>#help</strong></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Need Help!! How to submit a form and receive the form data in email like - in gmail ?<br/><mark>New</mark></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">  Why won't my XFCE4 log-in script work?<br/><small>1 comments</small></a>
-              </section>
-              <section class="list-group w-auto">
-                <a href="#" class="text-dark"><strong>#discuss</strong></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">What's the most fun you've ever had coding?<br/><small>18 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Knowing I'm Dumb Is the First Step<br/><small>1 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Google alternatives?<br/><small>16 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">What's your favorite Git tool?<br/><small>16 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Comparing The 3 Types of App Development: No-Code vs Low-Code vs Full Code<br/><mark>New</mark></a>
-              </section>
-              <section class="list-group w-auto">
-                <a href="#" class="text-dark"><strong>#explainlikeimfive</strong></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Unicorns on DEV 🦄🦄<br/><small>4 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Please explain why I need software architecture<br/><small>25 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Explain ReasonML Like I'm Five<br/><small>3 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">ELI5: Functions vs. Class/Constructor in Javascript<br/><small>10 comments</small></a>
-                <a href="#" class="list-group-item list-group-item-action border-white">Why do people write "window." in front of some things and not others?<br/><small>5 comments</small></a>
-              </section>
+            <div id="aside" class="p-3 mt-5 col-2 col-sm-2 col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxlblock">
+              <div class="card w-100">
+                <div class="card-body w-100 m-0 p-0">
+                  <div class="d-flex justify-content-around bg-light py-2">
+                    <h5 class="card-title">Listings</h5>
+                    <a href="#" class="linksColored">See all</a>
+                  </div>
+                  <div class="d-flex flex-column m-0 p-0">
+                    <a href="#" class="text-decoration-none m-0 p-0 py-2 listings border border-end-0 border-start-0">
+                      <span class="">Lorem ipsum dolor sit amet.</span>
+                      <span class="d-block cardSmallText">category</span>
+                    </a>
+                    <a href="#" class="text-decoration-none m-0 p-0 py-2 listings border border-end-0 border-start-0">
+                      <span class="">Lorem ipsum dolor sit amet.</span>
+                      <span class="d-block cardSmallText">category</span>
+                    </a>
+                    <a href="#" class="text-decoration-none m-0 p-0 py-2 listings border border-end-0 border-start-0">
+                      <span class="">Lorem ipsum dolor sit amet.</span>
+                      <span class="d-block cardSmallText">category</span>
+                    </a>
+                    <a href="#" class="text-decoration-none m-0 p-0 py-2 listings border border-end-0 border-start-0">
+                      <span class="">Lorem ipsum dolor sit amet.</span>
+                      <span class="d-block cardSmallText">category</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
