@@ -5,55 +5,56 @@ const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
 function plantillaPost(post,key) {
    // console.log(key)
     return (
-        `<article class="d-flex flex-column  bd-highlight">
-        <a href="./post.html?id=${key}" ><img class="w-75" src="${post.imgPost}"></a>
-        <div class="cardPost mb-3 mt-0 pt-0" style="height: 231px;">
-          <article class="card-body pt-0 mt-0 d-flex flex-column">
-            <!--img perfil y botones-->
-            <section class="d-flex flex-row">
-              <a href="#" class="profileImg align-self-center" style="background-image: url(${post.imgLink});"></a>
-              <article class="d-flex flex-column">
-                <div type="button" class="btn btn-outline-light btn-xs text-dark">
-                  ${post.namePost}
+        `
+        <div class="d-flex justify-content-center">
+          <div class="card">
+            <a href="./post.html?id=${key}">
+              <img src="${post.imgPost}" class="card-img-top" alt="${post.titlePost}">
+            </a>  
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="d-flex profileImg me-1">
+                  <img src="./img/pp.jpg" class="border border-1 rounded-circle">
                 </div>
-                <div type="button" class="btn btn-outline-light btn-xs text-dark">
-                  <small>${post.datePost} </small> 
-                </div>
-              </article>
-            </section>                        
-            <a href="./post.html?id=${key}" class="text-dark text-decoration-none mb-0">
-                <h4 class="font-weight-bold">
-                  ${post.titlePost}
-                </h4>
-            </a>
-            <div class="d-flex flex-row bd-highlight mb-0 mt-0">
-              <button type="button" class="btn btn-light">#webdev</button>
-              <button type="button" class="btn btn-light">#productivity</button>
-              <button type="button" class="btn btn-light">#css</button>
-            </div>
-            <section class="d-flex pt-0 align-items-center">
-              <div class="p-2 flex-grow-1 bd-highlight">
-                <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                      </svg>
-                      ${post.reactionsPost}
-                </a>
-              </div>
-              <div class="p-2 flex-grow-1 bd-highlight">
-                  <a href="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
-                          <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
-                        </svg>
-                        ${post.commentsPost}
+                <div class="d-flex flex-column text-start w-100">
+                  <div class="d-flex flex-column text-start">
+                    <div>
+                      <button type="button" class="btn text-start text-decoration-none buttonAuthor rounded text-nowrap p-0">
+                        <span class="fs-6 text-start">${post.namePost}</span>
+                      </button>
+                    </div>
+                    <span class="p-0 m-0 cardSmallText">${post.datePost}</span>
+                  </div>
+                  <a href="./post.html?id=${key}" class="titleLink my-2">
+                    <h3 class="">${post.titlePost}</h3>
                   </a>
+                  <div>
+                    <a href="#" class="btn buttonTags">#webdev</a>
+                    <a href="#" class="btn buttonTags">#productivity</a>
+                    <a href="#" class="btn buttonTags">#css</a>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <a href="#" class="btn buttonAuthor p-1">
+                        <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                        <span>${post.reactionsPost}</span>
+                      </a>
+                      <a href="#" class="btn buttonAuthor p-1">
+                      <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                        <span>${post.commentsPost}</span>
+                      </a>
+                    </div>
+                    <div>
+                      <span class="cardSmallText">${post.timeReadP}</span>
+                      <a href="#" class="btn buttonSave">Save</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="p-2 bd-highlight"><p class="card-text"><small class="text-muted">${post.timeReadP}</small></p></div>
-              <div class="p-2 bd-highlight"><button type="button" class="btn btn-light">Save</button></div>
-            </section>
-          </article>  
-        </div>                                                  
-      </article>`
+            </div>
+          </div>
+        </div>  
+        `
     )
   }
  
