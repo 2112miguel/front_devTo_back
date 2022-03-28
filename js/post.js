@@ -2,14 +2,11 @@ const queryPost = new URLSearchParams(window.location.search)
 const idPost = queryPost.get('id')
 const idHtml=document.getElementById('post')
 const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
-console.log(idPost)
-
+const url=`${urlApi}/devto/${idPost}.json`
 const postMain=()=>{
-    const url=`${urlApi}/devto/${idPost}.json`
-    console.log(url)
+    
     fetch(url).then((answ)=>answ.json())
     .then((body)=>{
-        console.log(body)
         const post=`<div class="card p-3 m-4 mt-5" >
                         <img src="${body.imgPost}" alt="...">
                         <article class="d-flex">
@@ -25,8 +22,14 @@ const postMain=()=>{
                         </div>
                     </div>`
             idHtml.insertAdjacentHTML('afterbegin',post)
-        //console.log(Object.keys(body).map)
     })
 }
 
+
+const deletePost=()=>{
+    fetch(url,{method: 'DELETE'})
+    setTimeout(()=>{
+        window.location.assign(`./index.html`)
+    },1000)
+}
 postMain()

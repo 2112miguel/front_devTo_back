@@ -82,6 +82,5 @@ function plantillaPost(post,key) {
    console.log('hace algo')
   window.local.assing(``)
  }
-
  createPost()
   
