@@ -3,8 +3,8 @@ const idPost = queryPost.get('id')
 const idHtml=document.getElementById('post')
 const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
 const url=`${urlApi}/devto/${idPost}.json`
-const postMain=()=>{
-    
+
+const postMain=()=>{    
     fetch(url).then((answ)=>answ.json())
     .then((body)=>{
         const post=`<div class="card p-3 m-4 mt-5" >
@@ -25,11 +25,17 @@ const postMain=()=>{
     })
 }
 
+const editPost=()=>{
+    window.location.assign(`./editPost.html?id=${idPost}`)
+  }
 
 const deletePost=()=>{
-    fetch(url,{method: 'DELETE'})
-    setTimeout(()=>{
-        window.location.assign(`./index.html`)
-    },1000)
+    const eliminar = confirm('¿Delete?')
+    if(eliminar==true) {
+        fetch(url,{method: 'DELETE'})
+        setTimeout(()=>{
+            window.location.assign(`./index.html`)
+        },1000)
+        }
 }
 postMain()
