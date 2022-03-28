@@ -95,10 +95,10 @@
     color: black;
     padding: 4px 4px 4px 29px;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg);
-    background-size: 16px 16px;
+    background-size: 25px 25px;
     background-repeat: no-repeat;
     background-position-y: center;
-    background-position-x: 3px;
+    background-position-x: right;
 }
 
 .grayTextColor {

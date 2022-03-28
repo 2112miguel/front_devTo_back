@@ -13,7 +13,7 @@ const postMain=()=>{
         const post=`<div class="card p-3 m-4" >
                         <img src="${body.imgPost}" alt="...">
                         <article class="d-flex">
-                            <div class""><img class="w-50 h-50 rounded-circle" src="https://res.cloudinary.com/practicaldev/image/fetch/s--pcSkTMZL--/c_limit,f_auto,fl_progressive,q_80,w_190/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png" alt=""></div>
+                            <div class="d-flex profileImg me-1"><img class="rounded-circle" src="./img/pp.jpg" alt=""></div>
                             <div class="d-flex flex-column">
                                 <div><a>${body.namePost}</a></div>
                                 <div>${body.datePost}</div>
