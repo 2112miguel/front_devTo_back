@@ -10,10 +10,10 @@ const postMain=()=>{
     fetch(url).then((answ)=>answ.json())
     .then((body)=>{
         console.log(body)
-        const post=`<div class="card p-3 m-4" >
+        const post=`<div class="card p-3 m-4 mt-5" >
                         <img src="${body.imgPost}" alt="...">
                         <article class="d-flex">
-                            <div class="d-flex profileImg me-1"><img class="rounded-circle" src="./img/pp.jpg" alt=""></div>
+                            <div class""><img class="w-50 h-50 rounded-circle profileImg" src=${body.authorImage} alt="${body.namePost}"></div>
                             <div class="d-flex flex-column">
                                 <div><a>${body.namePost}</a></div>
                                 <div>${body.datePost}</div>

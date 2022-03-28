@@ -9,54 +9,76 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
-<body>
-    <nav class="d-flex justify-content-between w-50">
+<body class="bg-light">
+    <nav class="navbar d-flex justify-content-between w-50">
         <section class="d-flex align-items-center">
             <div>
-                <a href="./index.html"><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt=""></a>
+                <a href="./index.html" class="navbar-brand"><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="" class="d-inline-block align-text-top" width="50px" height="40px"></a>
             </div>
             <div>
                 <span>Create Post</span>
             </div>
         </section>
         <section class="d-flex align-items-center">
-            <div class="mx-2"><span>Edit</span></div>
-            <div class="mx-2"><span>Preview</span></div>
+            <div class="mx-2 fw-bold"><span>Edit</span></div>
         </section>
     </nav>
-    <main>
-        <form class="d-flex flex-column" onsubmit="crearPost(event)">
-            <article class="">
-                <div id="imgLink" class="my-3 w-25">
-                    <input type="text" class="form-control" name="imgPost" placeholder="Add a cover image" required>
+    <main class="ms-5 d-flex">
+        <div class="card w-50 p-3 ms-5">
+
+            <form class="d-flex flex-column" onsubmit="crearPost(event)">
+                <div class="row w-25 mb-2" id="imgLink">
+                    <input type="text" class="form-control" name="imgPost" placeholder="Add a cover image URL" required>
                 </div>
-                <div id="" class="my-3 w-50">
-                    <input name="titlePost" class="form-control form-control-lg" type="text" placeholder="New post title here..." aria-label=".form-control-lg example">
+                <div class="row w-50 mb-2">
+                    <input type="text" name="namePost" id="" placeholder="Write your name" class="mb-2" required>
+                    <input type="text" name="authorImage" id="" placeholder="Insert a profile URL image" required>
                 </div>
-                <div class="my-3 w-50">
-                    <input name="tags" id="" class="form-control" type="text" placeholder="Add up to 4 tags" aria-label="default input example"></div>            
+                <div class="row mb-3">
+                    <input type="text" class="form-control form-control-lg" name="titlePost" placeholder="New post title here..." aria-label="form-control-lg example" required>
                 </div>
-            </article>
-            <article class="d-flex ">
-                <i class="bi bi-type-bold"></i>
-                <i class="bi bi-type-italic"></i>
-                <i class="bi bi-link-45deg"></i>
-                <i class="bi bi-list-ol"></i>
-                <i class="bi bi-list-ul"></i>
-                <i class="bi bi-quote"></i>
-                <i class="bi bi-code"></i>
-                <i class="bi bi-code-square"></i>
-                <i class="bi bi-card-image"></i>
-            </article>
-            <article class="w-50">
-                <textarea class="form-control" name="postContent" id="" rows="3" placeholder="Write your post content here..."></textarea>
-            </article>
-            <article class="d-flex my-3">
-                <button type="submit" class="btn btn-primary mx-2">Publish</button>
-                <button type="button" class="btn btn-outline-primary mx-2">Save draft</button>
-                <button type="button" class="btn btn-outline-primary mx-2">Revert new changes</button>
-            </article>
-        </form>
+                <div class="row mb-2">
+                    <input type="text" name="tags" id="" placeholder="Add up to 4 tags" aria-label="default input example" required>
+                </div>
+                <div class="row mb-5">
+                    <textarea class="form-control" name="postContent" id="" cols="30" rows="10" placeholder="Write your post content here..." required></textarea>
+                </div>
+                <div class="row mb-2">
+                    <button type="submit" class="btn btn-primary">Publish</button>
+                </div>
+            </form>
+        </div>
+        <div class="w-25 ms-2">
+            <h5 class="fw-bold">Writing a Great Post Title</h5>
+            <ul class="text-secondary">
+                <li>Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.</li>
+                <li>Use keywords where appropriate to help ensure people can find your post by search.</li>
+            </ul>
+        </div>
+
+            <!-- <form class="d-flex flex-column" onsubmit="crearPost(event)">
+                <article class="">
+                    <div id="imgLink" class="my-3 w-25">
+                        <input type="text" class="form-control" name="imgPost" placeholder="Add a cover image" required>
+                    </div>
+                    <div id="" class="my-3 w-50">
+                        <input name="titlePost" class="form-control form-control-lg" type="text" placeholder="New post title here..." aria-label=".form-control-lg example">
+                    </div>
+                    <div class="my-3 w-50">
+                        <input name="tags" id="" class="form-control" type="text" placeholder="Add up to 4 tags" aria-label="default input example"></div>            
+                    </div>
+                </article>
+                <article class="w-50">
+                    <textarea class="form-control" name="postContent" id="" rows="3" placeholder="Write your post content here..."></textarea>
+                </article>
+                <article class="d-flex my-3">
+                    <button type="submit" class="btn btn-primary mx-2">Publish</button>
+                    <button type="button" class="btn btn-outline-primary mx-2">Save draft</button>
+                    <button type="button" class="btn btn-outline-primary mx-2">Revert new changes</button>
+                </article>
+            </form> -->
+
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
