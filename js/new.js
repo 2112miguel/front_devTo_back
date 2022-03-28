@@ -18,7 +18,6 @@ const crearPost =(e)=>{
       post[txt.name]=txt.value
   })
   post['commentsPost']='0 comments'
-  post['namePost'] ='Anonymous'
   post['reactionsPost']='0 reactions'
   post['timeReadP']='4 min read'
   post['datePost'] = `${month} ${day}`
