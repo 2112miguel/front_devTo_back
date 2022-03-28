@@ -27,18 +27,18 @@
         <div class="card w-50 p-3 ms-5">
 
             <form class="d-flex flex-column" onsubmit="crearPost(event)">
-                <div class="row w-25 mb-2" id="imgLink">
-                    <input type="text" class="form-control" name="imgPost" placeholder="Add a cover image URL" required>
+                <div class="row w-50 mb-2" id="imgLink">
+                    <input type="text" class="form-control border-0" name="imgPost" placeholder="Add a cover image URL" required>
                 </div>
                 <div class="row w-50 mb-2">
-                    <input type="text" name="namePost" id="" placeholder="Write your name" class="mb-2" required>
-                    <input type="text" name="authorImage" id="" placeholder="Insert a profile URL image" required>
+                    <input type="text" name="namePost" id="" placeholder="Write your name" class="my-2 border-0" required>
+                    <input type="text" name="authorImage" id="" placeholder="Insert a profile URL image" class="border-0 my-2" required>
                 </div>
                 <div class="row mb-3">
-                    <input type="text" class="form-control form-control-lg" name="titlePost" placeholder="New post title here..." aria-label="form-control-lg example" required>
+                    <input type="text" class="form-control form-control-lg border-0 my-2" name="titlePost" placeholder="New post title here..." aria-label="form-control-lg example" required>
                 </div>
                 <div class="row mb-2">
-                    <input type="text" name="tags" id="" placeholder="Add up to 4 tags" aria-label="default input example" required>
+                    <input type="text" name="tags" id="tags" placeholder="Add up to 4 tags" aria-label="default input example" class="border-0 my-1" required>
                 </div>
                 <div class="row mb-5">
                     <textarea class="form-control" name="postContent" id="" cols="30" rows="10" placeholder="Write your post content here..." required></textarea>
