@@ -1,6 +1,23 @@
 const idPost= document.getElementById('idPost')
 const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
+const url=`${urlApi}/devto.json`
 
+const buscarPost=(e)=>{
+  const titleFind= e.target.value.toLowerCase()
+  let pivo=0
+  fetch(url).then((anws)=>anws.json())
+  .then((body)=>{
+    const keys=Object.keys(body).filter((obj)=>{
+      console.log(body[obj].titlePost.toLowerCase().indexOf(titleFind.toLowerCase()))
+    })
+    const key=Object.values(body)
+    const result = key.filter((obj)=>{
+      return obj.titlePost.toLowerCase().indexOf(titleFind.toLowerCase())> -1
+    })
+    console.log(result)
+  })
+ 
+}
 
 function plantillaPost(post,key) {
    // console.log(key)
@@ -63,7 +80,6 @@ function plantillaPost(post,key) {
   }
 
  const createPost = ()=>{
-  const url=`${urlApi}/devto.json`
     fetch(url).then((respuesta)=>respuesta.json())
     .then((body)=>{
       //let key=Object.keys(body)
@@ -83,4 +99,5 @@ function plantillaPost(post,key) {
   window.local.assing(``)
  }
  createPost()
-  
+ 
+ 
