@@ -98,6 +98,13 @@ function plantillaPost(post,key) {
    console.log('hace algo')
   window.local.assing(``)
  }
+
  createPost()
+<<<<<<< HEAD
  
  
+=======
+
+ 
+
+>>>>>>> 1312c7e5e3090db561da22075bb7c9b719905768
