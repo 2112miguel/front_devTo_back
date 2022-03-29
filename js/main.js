@@ -137,10 +137,6 @@ function plantillaPost(post,key) {
         `
     )
   }
- 
-  const apiDevto=()=>{
-    
-  }
 
  const createPost = ()=>{
     fetch(url).then((respuesta)=>respuesta.json())
@@ -155,6 +151,10 @@ function plantillaPost(post,key) {
       })
       
     })
+ }
+
+ const order=()=>{
+   console.log('entra')
  }
 
  createPost()
