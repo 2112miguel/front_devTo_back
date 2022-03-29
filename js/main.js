@@ -3,6 +3,14 @@ const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
 const url=`${urlApi}/devto.json`
 const textBoxId = document.getElementById('searchBoxId')
 
+const render=()=>{
+  if(idPost.children.length>0){
+    const post=Array.from(idPost.children)
+    post.forEach((post)=>{
+      idPost.removeChild(post)
+    })}
+ }
+
 const busqueda = (event)=> {
   if(idPost.children.length>0){
     const post=Array.from(idPost.children)
@@ -27,12 +35,11 @@ const busqueda = (event)=> {
           let idKey = keyArray[index]
           const card=plantillaPost(valor,idKey)
           
-          idPost.insertAdjacentHTML('beforeend', card)
+          idPost.insertAdjacentHTML('afterbegin', card)
          }
         });
   })
 }
-
 
 function plantillaPost(post,key) {
    // console.log(key)
@@ -104,28 +111,54 @@ function plantillaPost(post,key) {
       
     })
  }
-
- const order=()=>{
-  if(idPost.children.length>0){
-    const post=Array.from(idPost.children)
-    post.forEach((post)=>{
-      idPost.removeChild(post)
-    })}
-
+ 
+ const filterYear=()=>{
+  render()
   fetch(url).then((answ)=>answ.json())
   .then((body)=>{
+    const today= new Date()
+    const todayYear= today.getFullYear()
+    console.log(today)
     const posts=Object.values(body)
     const postKey=Object.keys(body)
-    let postDate ={}
-    Object.values(posts.forEach((date)=>{
-      console.log( date.datePost)
-    }))
-    console.log(postDate)
-    
-    //posts
+    const post=posts.forEach((post, index)=>{
+      const miliseconds = parseInt(post.idPost)
+      const date = new Date(miliseconds)
+      const datePost = date.getFullYear()
+      if(datePost==todayYear){
+        const card=plantillaPost(post,postKey[index])
+        idPost.insertAdjacentHTML('afterbegin', card)
+      }
+      
+    })
   })
   .catch((error)=>console.log(error))
  }
+
+ const filterMonth=()=>{
+  render()
+  fetch(url).then((answ)=>answ.json())
+  .then((body)=>{
+    const today= new Date()
+    const todayMonth= today.getMonth() +1
+    console.log(today)
+    const posts=Object.values(body)
+    const postKey=Object.keys(body)
+    const post=posts.forEach((post, index)=>{
+      const miliseconds = parseInt(post.idPost)
+      const date = new Date(miliseconds)
+      const datePost = date.getMonth() +1
+      if(datePost==todayMonth){
+        const card=plantillaPost(post,postKey[index])
+        idPost.insertAdjacentHTML('afterbegin', card)
+      }
+      
+    })
+  })
+  .catch((error)=>console.log(error))
+ }
+
+ 
 
  createPost()
  
