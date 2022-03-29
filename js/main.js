@@ -4,20 +4,19 @@ const url=`${urlApi}/devto.json`
 const textBoxId = document.getElementById('searchBoxId')
 
 const busqueda = (event)=> {
-  event.preventDefault();
   if(idPost.children.length>0){
     const post=Array.from(idPost.children)
     post.forEach((post)=>{
       idPost.removeChild(post)
-    })
-  }
-  const jsonDatabase = `${urlApi}/devto.json`
+    })}
+  event.preventDefault();
+  const jsonDatabase = `${urlApi}/devto.json`;
   fetch(jsonDatabase).then((respuesta)=> respuesta.json())
   .then((body)=>{
       let searchTerm = textBoxId.value.toLowerCase();
   
-      let array = Object.values(body)
-      let keyArray = Object.keys(body)
+      let array = Object.values(body);
+      let keyArray = Object.keys(body);
   
       array.forEach((valor, index) => {
           let titulo = valor.titlePost.toLowerCase();
@@ -26,7 +25,6 @@ const busqueda = (event)=> {
          
          } else {
           let idKey = keyArray[index]
-          console.log(idKey)
            const card =`
            <div class="d-flex justify-content-center">
              <div class="card">
@@ -77,28 +75,12 @@ const busqueda = (event)=> {
              </div>
            </div>  
            `
-          idPost.insertAdjacentHTML('afterbegin', card)
+          idPost.insertAdjacentHTML('beforeend', card)
          }
-   
         });
-
   })
 }
 
-const clearSearch=(e)=>{
-    const eventoDeKey = e.key
-    if (eventoDeKey == 'Backspace') {          
-      const busquedas = htmlId.children
-      if (busqueda.length > 0) {
-          const busquedasDiv = Array.from(busquedas);
-          busquedasDiv.forEach((div) => {
-              htmlId.removeChild(div);
-          })
-
-      }
-
-    }
-}
 
 function plantillaPost(post,key) {
    // console.log(key)
@@ -173,11 +155,6 @@ function plantillaPost(post,key) {
       })
       
     })
- }
-
- const goPost=(idPost)=>{
-   console.log('hace algo')
-  window.local.assing(``)
  }
 
  createPost()
