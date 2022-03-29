@@ -15,11 +15,12 @@ const busqueda = (event)=> {
     
         array.forEach((valor, index) => {
             let titulo = valor.titlePost.toLowerCase();
-
+            
            if (titulo.search(searchTerm) === -1){
            
            } else {
             let idKey = keyArray[index]
+            console.log(idKey)
              const card =`
              <div class="d-flex justify-content-center">
                <div class="card">
