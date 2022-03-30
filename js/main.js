@@ -12,11 +12,7 @@ const render=()=>{
  }
 
 const busqueda = (event)=> {
-  if(idPost.children.length>0){
-    const post=Array.from(idPost.children)
-    post.forEach((post)=>{
-      idPost.removeChild(post)
-    })}
+  render()
   event.preventDefault();
   const jsonDatabase = `${urlApi}/devto.json`;
   fetch(jsonDatabase).then((respuesta)=> respuesta.json())
@@ -29,20 +25,17 @@ const busqueda = (event)=> {
       array.forEach((valor, index) => {
           let titulo = valor.titlePost.toLowerCase();
           
-         if (titulo.search(searchTerm) === -1){
-         
-         } else {
+         if (titulo.search(searchTerm) != -1){
           let idKey = keyArray[index]
           const card=plantillaPost(valor,idKey)
           
           idPost.insertAdjacentHTML('afterbegin', card)
-         }
+         } 
         });
   })
 }
 
 function plantillaPost(post,key) {
-   // console.log(key)
     return (
         `
         <div class="d-flex justify-content-center">
@@ -100,7 +93,6 @@ function plantillaPost(post,key) {
  const createPost = ()=>{
     fetch(url).then((respuesta)=>respuesta.json())
     .then((body)=>{
-      //let key=Object.keys(body)
       const keys= Object.keys(body)
       let i=0
       const apiJson=Object.keys(body).map(id=>{
@@ -118,7 +110,6 @@ function plantillaPost(post,key) {
   .then((body)=>{
     const today= new Date()
     const todayYear= today.getFullYear()
-    console.log(today)
     const posts=Object.values(body)
     const postKey=Object.keys(body)
     const post=posts.forEach((post, index)=>{
