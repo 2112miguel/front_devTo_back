@@ -158,7 +158,32 @@ function plantillaPost(post,key) {
   .catch((error)=>console.log(error))
  }
 
- 
+ const filterWeek = () => {
+   render()
+   fetch(url).then((answ)=>answ.json())
+   .then((body)=>{
+     const today = new Date()
+     todayMiliseconds = today.getTime();
+     sevenDaysMiliseconds = 604800000
+     lastSevenDaysMiliseconds = todayMiliseconds - sevenDaysMiliseconds
+     
+     const posts = Object.values(body)
+     const postKey = Object.keys(body)
+
+     posts.forEach((post, index)=>{
+      const postMiliseconds = parseInt(post.idPost)
+       if( postMiliseconds >= lastSevenDaysMiliseconds ){
+       const card = plantillaPost(post,postKey[index])
+        idPost.insertAdjacentHTML('afterbegin', card)
+      }
+     })
+     
+
+
+
+   })
+ }
+
 
  createPost()
  
