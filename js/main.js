@@ -38,7 +38,7 @@ const busqueda = (event)=> {
 function plantillaPost(post,key) {
     return (
         `
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mb-2">
           <div class="card">
             <a href="./post.html?id=${key}">
               <img src="${post.imgPost}" class="card-img-top" alt="${post.titlePost}">
@@ -55,7 +55,7 @@ function plantillaPost(post,key) {
                         <span class="fs-6 text-start">${post.namePost}</span>
                       </button>
                     </div>
-                    <span class="p-0 m-0 cardSmallText">${post.datePost}</span>
+                    <span class="p-0 m-0 cardSmallText">Posted on: ${post.datePost}</span>
                   </div>
                   <a href="./post.html?id=${key}" class="titleLink my-2">
                     <h3 class="">${post.titlePost}</h3>
