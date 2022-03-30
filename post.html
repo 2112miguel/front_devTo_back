@@ -135,10 +135,13 @@
   </nav>
   <div class="cont">
     <div class="row">
-      <div class="col-3">
-        corazon
+      <!--First column-->
+      <div id="reactions" class="col-3 col-sm-2 col-lg-2 col-xl-2 col-xxl-2 d-sm-none d-none d-md-block d-lg-block d-xl-block d-xxl-block">
+        <div>
+        </div>
       </div>
-      <div class="col-6">
+      <!--Second column-->
+      <div class="col-5 col-sm-10 col-lg-8 col-xl-7 col-xxl-7 d-inline d-flex flex-column mt-5">
         <section class="my-5" id="post">
           <article class="d-flex justify-content-end mx-4">
             <div><button type="button" class="btn btn-primary mx-2" onclick="editPost()">Edit</button></div>
@@ -168,9 +171,14 @@
           
         </section>
     </div>
-
-    <div class="col-3">
-
+    <!--Third column-->
+    <div id="col3Post" class="col-4 position-sticky col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxlblock">
+      <div class="pt-5 m-1 mt-5 position-sticky">
+        <div class="card position-sticky mt-5">
+          <div id="cardheader" class="card-header bg-secondary text-secondary p-0">o
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   </div>
