@@ -108,11 +108,13 @@
       </div>
           </div>
       </div>
-      <form class="form-inline d-flex w-auto">
-        <a class="navbar-brand" href="./index.html">
-          <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" width="50" height="40" alt="">
-        </a>
-        <input type="searchBox" placeholder="Search" class="inputSearch rounded mb-4">    
+      <form class="form-inline d-flex w-auto " onsubmit="(busqueda(event))">
+        <div>
+          <a class="navbar-brand" href="./index.html">
+            <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" width="50" height="40" alt="">
+          </a>
+        </div>
+        <input type="searchBox" id="searchBoxId" placeholder="Search..." class="inputSearch rounded mb-4" >    
       </form>
     </div>
     </div>
@@ -235,24 +237,30 @@
                   </div>
             </div>            
             <!--Second column-->
-            <div class="col-7 col-sm-10 col-lg-8 col-xl-7 col-xxl-7 d-inline d-flex justify-content-center flex-column mt-5">
+            <div class="col-7 col-sm-10 col-lg-8 col-xl-7 col-xxl-7 d-inline d-flex flex-column mt-5">
                 <!--Barra Nav-->
                 <div>
                   <ul class="nav">
                       <li class="nav-item">
-                        <a class="nav-link active text-dark" href="#">Relevant</a>
+                        <a class="nav-link active text-dark" onclick="createPost()" href="#">Relevant</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Lastest</a>
+                        <a class="nav-link text-dark" onclick="filterMonth()" href="#">Month</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Top</a>
+                        <a class="nav-link text-dark" onclick="filterYear()" href="#">Year</a>             
+                      </li>  
+                      <li class="nav-item">
+                        <a class="nav-link text-dark" onclick="filterWeek()" href="#">Week</a>             
+                      </li>    
+                      <li class="nav-item">
+                        <a class="nav-link text-dark" onclick="filterWeek()" href="#">Week</a>             
                       </li>    
                     </ul>
                 </div>
-                  <!--Cards Scroll infinito-->
+                  <!--Cards Scroll infinito <a class="nav-link text-dark" href="#">Top</a>-->
                   <!--Primera card-->
-              <section id="idPost" class="d-flex flex-column justify-content-center gap-2">
+              <section id="idPost" class="d-flex flex-column">
 
               </section>    
               <section class="d-flex flex-column mt-5">

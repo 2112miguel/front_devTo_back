@@ -1,9 +1,41 @@
 const idPost= document.getElementById('idPost')
 const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
+const url=`${urlApi}/devto.json`
+const textBoxId = document.getElementById('searchBoxId')
 
+const render=()=>{
+  if(idPost.children.length>0){
+    const post=Array.from(idPost.children)
+    post.forEach((post)=>{
+      idPost.removeChild(post)
+    })}
+ }
+
+const busqueda = (event)=> {
+  render()
+  event.preventDefault();
+  const jsonDatabase = `${urlApi}/devto.json`;
+  fetch(jsonDatabase).then((respuesta)=> respuesta.json())
+  .then((body)=>{
+      let searchTerm = textBoxId.value.toLowerCase();
+  
+      let array = Object.values(body);
+      let keyArray = Object.keys(body);
+  
+      array.forEach((valor, index) => {
+          let titulo = valor.titlePost.toLowerCase();
+          
+         if (titulo.search(searchTerm) != -1){
+          let idKey = keyArray[index]
+          const card=plantillaPost(valor,idKey)
+          
+          idPost.insertAdjacentHTML('afterbegin', card)
+         } 
+        });
+  })
+}
 
 function plantillaPost(post,key) {
-   // console.log(key)
     return (
         `
         <div class="d-flex justify-content-center">
@@ -57,16 +89,10 @@ function plantillaPost(post,key) {
         `
     )
   }
- 
-  const apiDevto=()=>{
-    
-  }
 
  const createPost = ()=>{
-  const url=`${urlApi}/devto.json`
     fetch(url).then((respuesta)=>respuesta.json())
     .then((body)=>{
-      //let key=Object.keys(body)
       const keys= Object.keys(body)
       let i=0
       const apiJson=Object.keys(body).map(id=>{
@@ -77,10 +103,79 @@ function plantillaPost(post,key) {
       
     })
  }
-
- const goPost=(idPost)=>{
-   console.log('hace algo')
-  window.local.assing(``)
+ 
+ const filterYear=()=>{
+  render()
+  fetch(url).then((answ)=>answ.json())
+  .then((body)=>{
+    const today= new Date()
+    const todayYear= today.getFullYear()
+    const posts=Object.values(body)
+    const postKey=Object.keys(body)
+    const post=posts.forEach((post, index)=>{
+      const miliseconds = parseInt(post.idPost)
+      const date = new Date(miliseconds)
+      const datePost = date.getFullYear()
+      if(datePost==todayYear){
+        const card=plantillaPost(post,postKey[index])
+        idPost.insertAdjacentHTML('afterbegin', card)
+      }
+      
+    })
+  })
+  .catch((error)=>console.log(error))
  }
+
+ const filterMonth=()=>{
+  render()
+  fetch(url).then((answ)=>answ.json())
+  .then((body)=>{
+    const today= new Date()
+    const todayMonth= today.getMonth() +1
+    console.log(today)
+    const posts=Object.values(body)
+    const postKey=Object.keys(body)
+    const post=posts.forEach((post, index)=>{
+      const miliseconds = parseInt(post.idPost)
+      const date = new Date(miliseconds)
+      const datePost = date.getMonth() +1
+      if(datePost==todayMonth){
+        const card=plantillaPost(post,postKey[index])
+        idPost.insertAdjacentHTML('afterbegin', card)
+      }
+      
+    })
+  })
+  .catch((error)=>console.log(error))
+ }
+
+ const filterWeek = () => {
+   render()
+   fetch(url).then((answ)=>answ.json())
+   .then((body)=>{
+     const today = new Date()
+     todayMiliseconds = today.getTime();
+     sevenDaysMiliseconds = 604800000
+     lastSevenDaysMiliseconds = todayMiliseconds - sevenDaysMiliseconds
+     
+     const posts = Object.values(body)
+     const postKey = Object.keys(body)
+
+     posts.forEach((post, index)=>{
+      const postMiliseconds = parseInt(post.idPost)
+       if( postMiliseconds >= lastSevenDaysMiliseconds ){
+       const card = plantillaPost(post,postKey[index])
+        idPost.insertAdjacentHTML('afterbegin', card)
+      }
+     })
+     
+
+
+
+   })
+ }
+
+
  createPost()
-  
+ 
+ 

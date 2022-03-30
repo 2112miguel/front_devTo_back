@@ -8,7 +8,7 @@ const mainEditPost=()=>{
     
     fetch(url).then((answ)=>answ.json())
     .then((body)=>{
-        console.log(body)
+       // console.log(body)
        // postEdit['authorImage']=body.authorImage
         postEdit['commentsPost']=body.commentsPost
         postEdit['datePost']=body.datePost
@@ -84,7 +84,7 @@ const editPost=(e)=>{
     .catch((error)=>{
         console.log(error)
     })
-    console.log(postEdit)
+    
     setTimeout(()=>{
         window.location.assign(`./index.html`)
     },1000)
