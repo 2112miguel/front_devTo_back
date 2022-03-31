@@ -91,6 +91,7 @@ function plantillaPost(post,key) {
   }
 
  const createPost = ()=>{
+   render();
     fetch(url).then((respuesta)=>respuesta.json())
     .then((body)=>{
       const keys= Object.keys(body)
