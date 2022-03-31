@@ -156,13 +156,13 @@
 }
 
 @media (max-width: 1025px ){
-    #aside{
+    #aside, #col3Post{
         display: none;
     }
 }
 
 @media (max-width: 767px ){
-    #navL{
+    #navL, #reactions{
         display: none;
     }
 }
