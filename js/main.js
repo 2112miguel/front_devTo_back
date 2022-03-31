@@ -132,6 +132,7 @@ function plantillaPost(post,key) {
   .then((body)=>{
     const today= new Date()
     const todayMonth= today.getMonth() +1
+    const todayYear = today.getFullYear();
     console.log(today)
     const posts=Object.values(body)
     const postKey=Object.keys(body)
@@ -139,7 +140,8 @@ function plantillaPost(post,key) {
       const miliseconds = parseInt(post.idPost)
       const date = new Date(miliseconds)
       const datePost = date.getMonth() +1
-      if(datePost==todayMonth){
+      const yearPost = date.getFullYear();
+      if(datePost==todayMonth && yearPost == todayYear){
         const card=plantillaPost(post,postKey[index])
         idPost.insertAdjacentHTML('afterbegin', card)
       }
