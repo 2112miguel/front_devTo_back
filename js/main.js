@@ -55,7 +55,7 @@ function plantillaPost(post,key) {
                         <span class="fs-6 text-start">${post.namePost}</span>
                       </button>
                     </div>
-                    <span class="p-0 m-0 cardSmallText">${post.datePost}</span>
+                    <span class="p-0 m-0 cardSmallText">Posted on: ${post.datePost}</span>
                   </div>
                   <a href="./post.html?id=${key}" class="titleLink my-2">
                     <h3 class="">${post.titlePost}</h3>

@@ -7,9 +7,11 @@ const crearPost =(e)=>{
   const inputNodes = Array.from(e.target.querySelectorAll('input'))
   const txtAreaNode=e.target.querySelectorAll('textarea')
   const post={}
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   const d= new Date()
   //console.log()
-  const month=d.getMonth() + 1
+  const month=months[d.getMonth()];
+  console.log(month)
   const day=d.getUTCDate()
   inputNodes.forEach((input)=>{
       post[input.name]=input.value
