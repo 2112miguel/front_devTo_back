@@ -1,63 +1,65 @@
-const idPost= document.getElementById('idPost')
-const urlApi="https://devto-7e35a-default-rtdb.firebaseio.com";
-const url=`${urlApi}/devto.json`
-const textBoxId = document.getElementById('searchBoxId')
+const idPost = document.getElementById("idPost");
+const urlApi = "https://devto-7e35a-default-rtdb.firebaseio.com";
+const urlApiExterna = `${urlApi}/devto.json`;
+const url = `http://localhost:8000/posts`;
+const textBoxId = document.getElementById("searchBoxId");
 
-const render=()=>{
-  if(idPost.children.length>0){
-    const post=Array.from(idPost.children)
-    post.forEach((post)=>{
-      idPost.removeChild(post)
-    })}
- }
+const render = () => {
+  if (idPost.children.length > 0) {
+    const post = Array.from(idPost.children);
+    post.forEach((post) => {
+      idPost.removeChild(post);
+    });
+  }
+};
 
-const busqueda = (event)=> {
-  render()
+const busqueda = (event) => {
+  render();
   event.preventDefault();
   const jsonDatabase = `${urlApi}/devto.json`;
-  fetch(jsonDatabase).then((respuesta)=> respuesta.json())
-  .then((body)=>{
+  fetch(jsonDatabase)
+    .then((respuesta) => respuesta.json())
+    .then((body) => {
       let searchTerm = textBoxId.value.toLowerCase();
-  
+
       let array = Object.values(body);
       let keyArray = Object.keys(body);
-  
-      array.forEach((valor, index) => {
-          let titulo = valor.titlePost.toLowerCase();
-          
-         if (titulo.search(searchTerm) != -1){
-          let idKey = keyArray[index]
-          const card=plantillaPost(valor,idKey)
-          
-          idPost.insertAdjacentHTML('afterbegin', card)
-         } 
-        });
-  })
-}
 
-function plantillaPost(post,key) {
-    return (
-        `
+      array.forEach((valor, index) => {
+        let titulo = valor.titlePost.toLowerCase();
+
+        if (titulo.search(searchTerm) != -1) {
+          let idKey = keyArray[index];
+          const card = plantillaPost(valor, idKey);
+
+          idPost.insertAdjacentHTML("afterbegin", card);
+        }
+      });
+    });
+};
+
+function plantillaPost(post) {
+  return `
         <div class="d-flex my-2 justify-content-center">
           <div class="card">
-            <a href="./post.html?id=${key}">
-              <img src="${post.imgPost}" class="card-img-top" alt="${post.titlePost}">
+            <a href="./post.html?id=${post._id}">
+              <img src="${post.image}" class="card-img-top" alt="${post.titlePost}">
             </a>  
             <div class="card-body">
               <div class="d-flex">
                 <div class="d-flex profileImg me-1">
-                  <img src="${post.authorImage}" class="border border-1 rounded-circle profileImg">
+                  <img src="${post.imageUser}" class="border border-1 rounded-circle profileImg">
                 </div>
                 <div class="d-flex flex-column text-start w-100">
                   <div class="d-flex flex-column text-start">
                     <div>
                       <button type="button" class="btn text-start text-decoration-none buttonAuthor rounded text-nowrap p-0">
-                        <span class="fs-6 text-start">${post.namePost}</span>
+                        <span class="fs-6 text-start">${post.userId}</span>
                       </button>
                     </div>
                     <span class="p-0 m-0 cardSmallText">Posted on: ${post.datePost}</span>
                   </div>
-                  <a href="./post.html?id=${key}" class="titleLink my-2">
+                  <a href="./post.html?id=${post._id}" class="titleLink my-2">
                     <h3 class="">${post.titlePost}</h3>
                   </a>
                   <div>
@@ -86,99 +88,91 @@ function plantillaPost(post,key) {
             </div>
           </div>
         </div>  
-        `
-    )
-  }
+        `;
+}
 
- const createPost = ()=>{
-   render();
-    fetch(url).then((respuesta)=>respuesta.json())
-    .then((body)=>{
-      const keys= Object.keys(body)
-      let i=0
-      const apiJson=Object.keys(body).map(id=>{
-        const card=plantillaPost(body[id],keys[i])
-        idPost.insertAdjacentHTML('afterbegin',card)
-        i++
-      })
-      
+const createPost = () => {
+  render();
+  fetch(url)
+    .then((respuesta) => respuesta.json())
+    .then((body) => {
+      console.log("Entra ", body.playload);
+      body.playload.forEach((post) => {
+        console.log(post);
+        const card = plantillaPost(post);
+        idPost.insertAdjacentHTML("afterbegin", card);
+      });
+    });
+};
+
+const filterYear = () => {
+  render();
+  fetch(url)
+    .then((answ) => answ.json())
+    .then((body) => {
+      const today = new Date();
+      const todayYear = today.getFullYear();
+      const posts = Object.values(body);
+      const postKey = Object.keys(body);
+      const post = posts.forEach((post, index) => {
+        const miliseconds = parseInt(post.idPost);
+        const date = new Date(miliseconds);
+        const datePost = date.getFullYear();
+        if (datePost == todayYear) {
+          const card = plantillaPost(post, postKey[index]);
+          idPost.insertAdjacentHTML("afterbegin", card);
+        }
+      });
     })
- }
- 
- const filterYear=()=>{
-  render()
-  fetch(url).then((answ)=>answ.json())
-  .then((body)=>{
-    const today= new Date()
-    const todayYear= today.getFullYear()
-    const posts=Object.values(body)
-    const postKey=Object.keys(body)
-    const post=posts.forEach((post, index)=>{
-      const miliseconds = parseInt(post.idPost)
-      const date = new Date(miliseconds)
-      const datePost = date.getFullYear()
-      if(datePost==todayYear){
-        const card=plantillaPost(post,postKey[index])
-        idPost.insertAdjacentHTML('afterbegin', card)
-      }
-      
+    .catch((error) => console.log(error));
+};
+
+const filterMonth = () => {
+  render();
+  fetch(url)
+    .then((answ) => answ.json())
+    .then((body) => {
+      const today = new Date();
+      const todayMonth = today.getMonth() + 1;
+      const todayYear = today.getFullYear();
+      console.log(today);
+      const posts = Object.values(body);
+      const postKey = Object.keys(body);
+      const post = posts.forEach((post, index) => {
+        const miliseconds = parseInt(post.idPost);
+        const date = new Date(miliseconds);
+        const datePost = date.getMonth() + 1;
+        const yearPost = date.getFullYear();
+        if (datePost == todayMonth && yearPost == todayYear) {
+          const card = plantillaPost(post, postKey[index]);
+          idPost.insertAdjacentHTML("afterbegin", card);
+        }
+      });
     })
-  })
-  .catch((error)=>console.log(error))
- }
+    .catch((error) => console.log(error));
+};
 
- const filterMonth=()=>{
-  render()
-  fetch(url).then((answ)=>answ.json())
-  .then((body)=>{
-    const today= new Date()
-    const todayMonth= today.getMonth() +1
-    const todayYear = today.getFullYear();
-    console.log(today)
-    const posts=Object.values(body)
-    const postKey=Object.keys(body)
-    const post=posts.forEach((post, index)=>{
-      const miliseconds = parseInt(post.idPost)
-      const date = new Date(miliseconds)
-      const datePost = date.getMonth() +1
-      const yearPost = date.getFullYear();
-      if(datePost==todayMonth && yearPost == todayYear){
-        const card=plantillaPost(post,postKey[index])
-        idPost.insertAdjacentHTML('afterbegin', card)
-      }
-      
-    })
-  })
-  .catch((error)=>console.log(error))
- }
+const filterWeek = () => {
+  render();
+  fetch(url)
+    .then((answ) => answ.json())
+    .then((body) => {
+      const today = new Date();
+      todayMiliseconds = today.getTime();
+      sevenDaysMiliseconds = 604800000;
+      lastSevenDaysMiliseconds = todayMiliseconds - sevenDaysMiliseconds;
 
- const filterWeek = () => {
-   render()
-   fetch(url).then((answ)=>answ.json())
-   .then((body)=>{
-     const today = new Date()
-     todayMiliseconds = today.getTime();
-     sevenDaysMiliseconds = 604800000
-     lastSevenDaysMiliseconds = todayMiliseconds - sevenDaysMiliseconds
-     
-     const posts = Object.values(body)
-     const postKey = Object.keys(body)
+      const posts = Object.values(body);
+      const postKey = Object.keys(body);
 
-     posts.forEach((post, index)=>{
-      const postMiliseconds = parseInt(post.idPost)
-       if( postMiliseconds >= lastSevenDaysMiliseconds ){
-       const card = plantillaPost(post,postKey[index])
-        idPost.insertAdjacentHTML('afterbegin', card)
-      }
-     })
-     
+      posts.forEach((post, index) => {
+        const postMiliseconds = parseInt(post.idPost);
+        if (postMiliseconds >= lastSevenDaysMiliseconds) {
+          const card = plantillaPost(post, postKey[index]);
+          idPost.insertAdjacentHTML("afterbegin", card);
+        }
+      });
+    });
+};
 
-
-
-   })
- }
-
-
- createPost()
- 
- 
+createPost();
