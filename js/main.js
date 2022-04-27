@@ -1,3 +1,5 @@
+const queryParams = new URLSearchParams(window.location.search);
+const id = queryParams.get("id");
 const idPost = document.getElementById("idPost");
 const urlApi = "https://devto-7e35a-default-rtdb.firebaseio.com";
 const urlApiExterna = `${urlApi}/devto.json`;
@@ -96,9 +98,7 @@ const createPost = () => {
   fetch(url)
     .then((respuesta) => respuesta.json())
     .then((body) => {
-      console.log("Entra ", body);
       body.playload.forEach((post) => {
-        console.log(post);
         const card = plantillaPost(post);
         idPost.insertAdjacentHTML("afterbegin", card);
       });
@@ -175,4 +175,10 @@ const filterWeek = () => {
     });
 };
 
+window.crearPost = () => {
+  console.log(id);
+  window.location.href = `./new.html?${id}`;
+};
+
+console.log(id);
 createPost();

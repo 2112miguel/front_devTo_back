@@ -24,9 +24,13 @@ window.logIn = (e) => {
     .then((res) => res.json())
     .then((body) => {
       console.log(body.payload);
-      localStorage.setItem(`${objPassword.email}`, `'${body.payload}'`);
+      localStorage.setItem(`${objPassword.email}`, body.payload);
     });
+  userParams(objPassword.email);
+};
+
+const userParams = (usuario) => {
   setTimeout(() => {
-    window.location.href = "./index.html";
+    window.location.href = `./index.html?id=${usuario}`;
   }, 1000);
 };
