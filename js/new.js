@@ -47,10 +47,10 @@ window.crearPost = (e) => {
       "Content-Type": "application/json",
       token: token,
     },
-  }); /*
+  });
   setTimeout(() => {
     window.location.href = `./index.html?user=${user}`;
-  }, 1000);*/
+  }, 1000);
 };
 
 window.ocultarSeccion = () => {

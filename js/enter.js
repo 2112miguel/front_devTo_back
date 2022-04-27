@@ -1,4 +1,4 @@
-import { tokenLocal } from "./global.js";
+import { elemetos } from "./global.js";
 const url = `http://localhost:8000/auth/login`;
 
 window.logIn = (e) => {
@@ -33,3 +33,13 @@ const userParams = (usuario) => {
     window.location.href = `./index.html?user=${usuario}`;
   }, 1000);
 };
+
+window.ocultarSeccion = () => {
+  elemetos.createAccount.style.display = "none";
+  elemetos.logIn.style.display = "none";
+  elemetos.createPost.style.display = "none";
+  elemetos.imgPerfil.style.display = "none";
+  elemetos.notificacion.style.display = "none";
+};
+
+ocultarSeccion();
