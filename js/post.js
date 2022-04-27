@@ -1,10 +1,13 @@
+import { elemetos } from "./global.js";
 const queryPost = new URLSearchParams(window.location.search);
 const idPost = queryPost.get("id");
+const user = queryPost.get("user");
 const idcol3Html = document.getElementById("col3Post");
 const idHtml = document.getElementById("post");
 const urlApi = "http://localhost:8000";
 const url = `${urlApi}/posts/${idPost}`;
 
+console.log(user);
 const postMain = () => {
   fetch(url)
     .then((answ) => answ.json())
@@ -46,7 +49,7 @@ const userCard = () => {
   fetch(url)
     .then((answ) => answ.json())
     .then((body) => {
-      const user = `<div class="card-body">
+      const userCard = `<div class="card-body">
                     <div class="d-inline-flex flex-row">
                         <img class="rounded-circle profileImg" src=${body.playload.imageUser} alt="${body.playload.userId}">
                         <div class="ms-2"><h5 class="card-title inline">${body.playload.userId}</h5></div>
@@ -59,9 +62,30 @@ const userCard = () => {
                     </div>
                     </div>
                     `;
-      idcol3Html.insertAdjacentHTML("beforeend", user);
+      idcol3Html.insertAdjacentHTML("beforeend", userCard);
     });
+};
+
+window.ocultarSeccion = () => {
+  if (user != null) {
+    elemetos.createAccount.style.display = "none";
+    elemetos.logIn.style.display = "none";
+  } else {
+    elemetos.imgPerfil.style.display = "none";
+    elemetos.notificacion.style.display = "none";
+    elemetos.createPost.style.display = "none";
+  }
+};
+
+window.userParams = () => {
+  window.location.href = `./index.html?user=${user}`;
+};
+
+window.createPost = () => {
+  console.log("entra");
+  window.location.href = `./new.html?user=${user}`;
 };
 
 postMain();
 userCard();
+ocultarSeccion();

@@ -31,6 +31,6 @@ window.logIn = (e) => {
 
 const userParams = (usuario) => {
   setTimeout(() => {
-    window.location.href = `./index.html?id=${usuario}`;
+    window.location.href = `./index.html?user=${usuario}`;
   }, 1000);
 };

@@ -1,5 +1,6 @@
+import { elemetos } from "./global.js";
 const queryParams = new URLSearchParams(window.location.search);
-const id = queryParams.get("id");
+const user = queryParams.get("user");
 const idPost = document.getElementById("idPost");
 const urlApi = "https://devto-7e35a-default-rtdb.firebaseio.com";
 const urlApiExterna = `${urlApi}/devto.json`;
@@ -44,7 +45,7 @@ function plantillaPost(post) {
   return `
         <div class="d-flex my-2 justify-content-center">
           <div class="card">
-            <a href="./post.html?id=${post._id}">
+            <a href="./post.html?id=${post._id}&user=${user}">
               <img src="${post.image}" class="card-img-top" alt="${post.titlePost}">
             </a>  
             <div class="card-body">
@@ -61,7 +62,7 @@ function plantillaPost(post) {
                     </div>
                     <span class="p-0 m-0 cardSmallText">Posted on: ${post.datePost}</span>
                   </div>
-                  <a href="./post.html?id=${post._id}" class="titleLink my-2">
+                  <a href="./post.html?id=${post._id}&user=${user}" class="titleLink my-2">
                     <h3 class="">${post.titlePost}</h3>
                   </a>
                   <div>
@@ -93,7 +94,7 @@ function plantillaPost(post) {
         `;
 }
 
-const createPost = () => {
+const pintPost = () => {
   render();
   fetch(url)
     .then((respuesta) => respuesta.json())
@@ -175,10 +176,29 @@ const filterWeek = () => {
     });
 };
 
-window.crearPost = () => {
-  console.log(id);
-  window.location.href = `./new.html?${id}`;
+window.ocultarSeccion = () => {
+  if (user != null) {
+    elemetos.createAccount.style.display = "none";
+    elemetos.logIn.style.display = "none";
+  } else {
+    elemetos.imgPerfil.style.display = "none";
+    elemetos.notificacion.style.display = "none";
+    elemetos.createPost.style.display = "none";
+  }
 };
 
-console.log(id);
-createPost();
+window.settings = () => {
+  window.location.href = `./settings.html?user=${user}`;
+};
+
+window.userParams = () => {
+  window.location.href = `./index.html?user=${user}`;
+};
+
+window.createPost = () => {
+  console.log("entra");
+  window.location.href = `./new.html?user=${user}`;
+};
+
+pintPost();
+ocultarSeccion();

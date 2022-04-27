@@ -26,7 +26,7 @@ window.logIn = (e) => {
   console.log(objPasswor);
 
   setTimeout(() => {
-    window.location.href = "./index.html";
+    window.location.href = `./index.html?user=${objPasswor.email}`;
   }, 1000);
 };
 
@@ -35,6 +35,7 @@ window.ocultarSeccion = () => {
   elemetos.notificacion.style.display = "none";
   elemetos.createAccount.style.display = "none";
   elemetos.createPost.style.display = "none";
+  elemetos.logIn.style.display = "none";
 };
 
 ocultarSeccion();
