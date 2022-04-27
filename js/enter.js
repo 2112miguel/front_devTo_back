@@ -23,9 +23,12 @@ window.logIn = (e) => {
   token
     .then((res) => res.json())
     .then((body) => {
-      localStorage.setItem(`${objPassword.email}`, body.payload);
+      if (body.success == true) {
+        localStorage.setItem(`${objPassword.email}`, body.payload);
+        console.log(localStorage.getItem(objPassword.email));
+        userParams(objPassword.email);
+      }
     });
-  userParams(objPassword.email);
 };
 
 const userParams = (usuario) => {
