@@ -31,8 +31,8 @@ const postMain = () => {
     });
 };
 
-const editPost = () => {
-  window.location.assign(`./editPost.html?id=${idPost}`);
+window.editPost = () => {
+  window.location.assign(`./editPost.html?id=${idPost}&user=${user}`);
 };
 
 const deletePost = () => {
@@ -84,6 +84,10 @@ window.userParams = () => {
 window.createPost = () => {
   console.log("entra");
   window.location.href = `./new.html?user=${user}`;
+};
+
+window.settings = () => {
+  window.location.href = `./settings.html?user=${user}`;
 };
 
 postMain();

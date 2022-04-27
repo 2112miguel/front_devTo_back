@@ -1,5 +1,7 @@
+import { elemetos } from "./global.js";
 const queryParams = new URLSearchParams(window.location.search);
 const idPost = queryParams.get("id");
+const user = queryParams.get("user");
 const urlApi = "http://localhost:8000/posts";
 const idEditPost = document.getElementById("editPost");
 const url = `${urlApi}/${idPost}`;
@@ -51,8 +53,9 @@ const mainEditPost = () => {
   console.log(postEdit);
 };
 
-const editPost = (e) => {
+window.editPost = (e) => {
   e.preventDefault();
+  const token = localStorage.getItem(user);
   const inputPost = e.target.querySelectorAll("input");
   const txtAreaHtml = e.target.querySelectorAll("textarea");
   const txtArea = Array.from(txtAreaHtml);
@@ -63,20 +66,48 @@ const editPost = (e) => {
   txtArea.forEach((input) => {
     postEdit[input.name] = input.value;
   });
+  postEdit["_id"] = idPost;
+  console.log(postEdit);
 
   fetch(url, {
     method: "PATCH",
     body: JSON.stringify(postEdit),
     headers: {
       "Content-Type": "application/json",
+      token: token,
     },
   }).catch((error) => {
     console.log(error);
   });
 
   setTimeout(() => {
-    window.location.assign(`./index.html`);
+    window.location.assign(`./index.html?user=${user}`);
   }, 1000);
 };
 
+window.ocultarSeccion = () => {
+  if (user != null) {
+    elemetos.createAccount.style.display = "none";
+    elemetos.logIn.style.display = "none";
+  } else {
+    elemetos.imgPerfil.style.display = "none";
+    elemetos.notificacion.style.display = "none";
+    elemetos.createPost.style.display = "none";
+  }
+};
+
+window.userParams = () => {
+  window.location.href = `./index.html?user=${user}`;
+};
+
+window.createPost = () => {
+  console.log("entra");
+  window.location.href = `./new.html?user=${user}`;
+};
+
+window.settings = () => {
+  window.location.href = `./settings.html?user=${user}`;
+};
+
 mainEditPost();
+ocultarSeccion();

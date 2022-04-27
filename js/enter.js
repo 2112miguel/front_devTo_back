@@ -23,7 +23,6 @@ window.logIn = (e) => {
   token
     .then((res) => res.json())
     .then((body) => {
-      console.log(body.payload);
       localStorage.setItem(`${objPassword.email}`, body.payload);
     });
   userParams(objPassword.email);

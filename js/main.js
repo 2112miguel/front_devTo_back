@@ -100,6 +100,7 @@ const pintPost = () => {
     .then((respuesta) => respuesta.json())
     .then((body) => {
       body.playload.forEach((post) => {
+        console.log(post);
         const card = plantillaPost(post);
         idPost.insertAdjacentHTML("afterbegin", card);
       });
