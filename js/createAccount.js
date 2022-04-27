@@ -1,5 +1,5 @@
 import { elemetos } from "./global.js";
-const url = ``;
+const url = `http://localhost:8000/users`;
 
 window.logIn = (e) => {
   e.preventDefault();
@@ -11,23 +11,26 @@ window.logIn = (e) => {
       objPasswor[input.name] = input.value;
     }
   });
-  if (objPasswor.password == objPasswor.passwordTwo) console.log("Son iguañes");
-  else console.log("no son iguales");
+  if (objPasswor.password == objPasswor.passwordTwo) {
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: objPasswor.email,
+        password: objPasswor.password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } else console.log("no son iguales");
   console.log(objPasswor);
+
   setTimeout(() => {
     window.location.href = "./index.html";
   }, 1000);
 };
 
 window.ocultarSeccion = () => {
-  console.log(elemetos.createAccount);
-  if (
-    elemetos.imgPerfil.id == "imgPerfil" ||
-    elemetos.notificacion == "notificacion" ||
-    elemetos.createPost == "createPost" ||
-    elemetos.createAccount == "createAccount"
-  ) {
-  }
   elemetos.imgPerfil.style.display = "none";
   elemetos.notificacion.style.display = "none";
   elemetos.createAccount.style.display = "none";

@@ -1,14 +1,32 @@
-const url = ``;
+import { tokenLocal } from "./global.js";
+const url = `http://localhost:8000/auth/login`;
 
-const logIn = (e) => {
+window.logIn = (e) => {
   e.preventDefault();
-  const objPasswor = {};
+  const objPassword = {};
   const inputsData = Array.from(e.target.querySelectorAll("input"));
-  console.log(inputsData);
   inputsData.forEach((input) => {
     if (input.value != "") {
-      objPasswor[input.name] = input.value;
+      objPassword[input.name] = input.value;
     }
   });
-  console.log(objPasswor);
+  const token = fetch(url, {
+    method: "POST",
+    body: JSON.stringify({
+      email: objPassword.email,
+      password: objPassword.password,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  token
+    .then((res) => res.json())
+    .then((body) => {
+      console.log(body.payload);
+      localStorage.setItem(`${objPassword.email}`, `'${body.payload}'`);
+    });
+  setTimeout(() => {
+    window.location.href = "./index.html";
+  }, 1000);
 };
