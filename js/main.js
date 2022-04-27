@@ -96,7 +96,7 @@ const createPost = () => {
   fetch(url)
     .then((respuesta) => respuesta.json())
     .then((body) => {
-      console.log("Entra ", body.playload);
+      console.log("Entra ", body);
       body.playload.forEach((post) => {
         console.log(post);
         const card = plantillaPost(post);
