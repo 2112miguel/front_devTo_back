@@ -42,28 +42,28 @@ const busqueda = (event) => {
 };
 
 function plantillaPost(post) {
-  console.log(post);
+  console.log(post.userId[0].email);
   return `
         <div class="d-flex my-2 justify-content-center">
           <div class="card">
-            <a href="./post.html?id=${post.id}&user=${user}">
+            <a href="./post.html?id=${post._id}&user=${user}">
               <img src="${post.image}" class="card-img-top" alt="${post.titlePost}">
             </a>  
             <div class="card-body">
               <div class="d-flex">
                 <div class="d-flex profileImg me-1">
-                  <img src="${post.imageUser}" class="border border-1 rounded-circle profileImg">
+                  <img src="${post.userId[0].imageUser}" class="border border-1 rounded-circle profileImg">
                 </div>
                 <div class="d-flex flex-column text-start w-100">
                   <div class="d-flex flex-column text-start">
                     <div>
                       <button type="button" class="btn text-start text-decoration-none buttonAuthor rounded text-nowrap p-0">
-                        <span class="fs-6 text-start">${post.email}</span>
+                        <span class="fs-6 text-start">${post.userId[0].email}</span>
                       </button>
                     </div>
                     <span class="p-0 m-0 cardSmallText">Posted on: ${post.datePost}</span>
                   </div>
-                  <a href="./post.html?id=${post.id}&user=${user}" class="titleLink my-2">
+                  <a href="./post.html?id=${post._id}&user=${user}" class="titleLink my-2">
                     <h3 class="">${post.titlePost}</h3>
                   </a>
                   <div>
@@ -100,8 +100,10 @@ const pintPost = () => {
   fetch(url)
     .then((respuesta) => respuesta.json())
     .then((body) => {
-      const card = plantillaPost(body);
-      idPost.insertAdjacentHTML("afterbegin", card);
+      body.payload.forEach((post) => {
+        const card = plantillaPost(post);
+        idPost.insertAdjacentHTML("afterbegin", card);
+      });
     });
 };
 

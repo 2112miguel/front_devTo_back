@@ -6,6 +6,7 @@ export const elemetos = {
   logIn: document.getElementById("logIn"),
   createAccount: document.getElementById("createAccount"),
   createPost: document.getElementById("createPost"),
+  imgProfile: document.getElementById("imgProfile"),
 };
 
 export const tokenLocal = new Token();

@@ -15,10 +15,10 @@ const mainEditPost = () => {
                 <form class="d-flex flex-column " onsubmit="editPost(event)">
                     <article class="p-4 bg-white my-1">
                         <div class="row w-50 mb-2" id="imgLink">
-                            <input type="text" class="form-control border-0" name="image" value="${body.playload.image}" required>
+                            <input type="text" class="form-control border-0" name="image" value="${body.image}" required>
                         </div>
                         <div class="row mb-3">
-                            <input type="text" class="form-control form-control-lg border-0 my-2" name="titlePost" value="${body.playload.titlePost}" aria-label="form-control-lg example" required>
+                            <input type="text" class="form-control form-control-lg border-0 my-2" name="titlePost" value="${body.titlePost}" aria-label="form-control-lg example" required>
                         </div>
                     </article>
                     <article class="d-flex justify-content-between bg-light mt-3">
@@ -36,7 +36,7 @@ const mainEditPost = () => {
                         <div class=""><i class="bi bi-three-dots-vertical"></i></div>
                     </article>
                     <div class="row mb-2 p-1">
-                        <textarea class="form-control border-0" name="content" id="" cols="30" rows="10" required>${body.playload.content}</textarea>
+                        <textarea class="form-control border-0" name="content" id="" cols="30" rows="10" required>${body.content}</textarea>
                     </div>
                     <div class="d-flex mb-2 p-1">
                         <article><button type="submit" class="btn btn-primary mx-2">Publish</button></article>

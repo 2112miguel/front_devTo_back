@@ -48,6 +48,7 @@ window.crearPost = (e) => {
       token: token,
     },
   });
+
   setTimeout(() => {
     window.location.href = `./index.html?user=${user}`;
   }, 1000);

@@ -34,12 +34,19 @@ window.editPost = () => {
   window.location.assign(`./editPost.html?id=${idPost}&user=${user}`);
 };
 
-const deletePost = () => {
+window.deletePost = () => {
+  const token = localStorage.getItem(user);
   const eliminar = confirm("¿Delete?");
   if (eliminar == true) {
-    fetch(url, { method: "DELETE" });
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    });
     setTimeout(() => {
-      window.location.assign(`./index.html`);
+      window.location.assign(`./index.html?user=${user}`);
     }, 1000);
   }
 };
